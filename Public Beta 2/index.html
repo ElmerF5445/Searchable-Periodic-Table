@@ -1,0 +1,1639 @@
+<html>
+	<head>
+		<title id="pageElement_PageTitle">
+			SPT
+		</title>
+		<link rel="stylesheet" href="Scripts/SPT_Stylesheet.css">
+		<link rel="stylesheet" href="Scripts/SPT_Stylesheet_Animations.css">
+		<link rel="stylesheet" href="Scripts/SPT_Stylesheet_References.css">
+		<link rel="icon" type="image/png" href="Assets/Icons/favicon.png" sizes="96x96">
+	</head>
+	<body class="MainPage" onload="OnloadTasks()">
+		<script src="Scripts/SPT_Javascript.js"></script>
+		<div class="LoadingScreen" id="LoadingScreen">
+			<img class="LoadingScreen_Icon" src="Assets/Icons/favicon.png"></img>
+			<h2 class="LoadingScreen_VersionTitle" id="versionTitle">
+				Searchable Periodic Table
+			</h2>
+			<h4 class="LoadingScreen_Text" id="LoadingScreen_Text">
+				Building page...
+			</h4>
+			<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+			<h4 class="LoadingScreen_Copyright" id="copyrightTitle">
+				Content By ElmerF
+			</h4>
+		</div>
+		<div class="SessionScreen" id="pageElement_SessionScreen" onclick="close_SessionScreen()">
+			<h1 class="SessionScreen_Time" id="Clock_Time_SessionScreen">
+				
+			</h1>
+			<h3 class="SessionScreen_Date" id="Clock_Date_SessionScreen">
+				
+			</h3>
+			<p class="SessionScreen_Instruction">
+				Click anywhere to start
+			</p>
+			<div class="SessionScreen_Copyright">
+				<p class="SessionScreen_Copyright_Text" id="pageElement_SessionScreen_Copyright">
+					Doodle Launcher Public Beta | Content By ElmerF 2022
+				</p>
+			</div>
+		</div>
+		<!-- All content goes inside the PageGrid -->
+		<div class="PageGrid">
+			<div class="Header" id="pageElement_Header">
+				<img class="Sidebar_Toggle" id="toggle_Sidebar" src="Assets/Icons/icon_hamburgermenu.png" onclick="toggle_Sidebar()"></img>
+				<div class="Header_PageNavi" id="button_PageNavi" onclick="toggle_Navigator(this.id)">
+					<h2 class="Header_PageNavi_Title" id="Header_PageNavi_Title">
+						Home
+					</h2>
+				</div>
+				<div class="Header_Buttons" id="pageElement_Header_Buttons">
+					<div class="Header_QuickSearchBar">
+						<input class="Header_QuickSearchBar_Input" placeholder="Search your element here" id="pageElement_SearchQuery"></input>
+						<img src="Assets/Icons/icon_search.png" class="Header_QuickSearchBar_Search" id="headerMain" onclick="search_Query(this.id)" onsubmit="search_Query(this.id)"></img>
+						
+					</div>
+					<p class="Header_PT_SearchType" id="Header_PT_SearchType" onclick="toggle_Textbox(this.id)">
+						Search type
+					</p>
+					
+				</div>
+				<div class="Header_Clock" id="pageElement_Header_Clock">
+					<h1 class="Header_Clock_Time" id="Clock_Time">
+						id="Clock_Time"
+					</h1>
+					<h1 class="Header_Clock_Date" id="Clock_Date">
+						id="Clock_Date"
+					</h1>
+				</div>
+				<div class="Header_Battery" id="pageElement_Header_Battery">
+					<h1 class="Header_Battery" id="Battery_Level">
+						%
+					</h1>
+				</div>
+				<div class="Header_RightMenu">
+					<img class="Header_RightMenu_Icon" src="Assets/Icons/icon_softwareUpdate.png"  id="button_Update" onclick="toggle_Textbox(this.id)"></img>
+					<img class="Header_RightMenu_Icon" src="Assets/Icons/icon_wifi_online.png"  id="button_Wifi" onclick="toggle_Textbox(this.id)"></img>
+				</div>
+			</div>
+			<div class="Header_Menu" id="pageElement_Header_Menu">
+				<div class="Header_Menu_Top">
+					<div class="Header_Menu_Top_Clock">
+						<h1 class="Header_Menu_Top_Clock_Time" id="Clock_Time_2">
+							id="Clock_Time"
+						</h1>
+						<h1 class="Header_Menu_Top_Clock_Date" id="Clock_Date_2">
+							id="Clock_Date"
+						</h1>
+					</div>
+					<h1 class="Header_Menu_Top_Battery" id="Battery_Level_2">
+						%
+					</h1>
+				</div>
+				<div class="Header_QuickSearchBar">
+					<input class="Header_QuickSearchBar_Input" placeholder="Internet search" id="pageElement_SearchQuery2"></input>
+					<img src="Assets/Icons/icon_search.png" class="Header_QuickSearchBar_Search" id="headerMenu" onclick="search_Query(this.id)"></img>
+				</div>
+				<div class="Header_PageNavi_Textbox_Title">
+					Page Navigation
+				</div>
+				<div class="Header_PageNavi_Textbox_List" id="pageElement_Header_Menu_PageNaviList">
+					
+				</div>
+				<div class="Header_PageNavi_Textbox_Title">
+					Page Actions
+				</div>
+				<div class="Header_PageNavi_Textbox_List" id="pageElement_Header_Menu_PageActions">
+					<a href="SPT_ShortcutEditor.html">
+						<p class="Header_PageNavi_Textbox_List_Item">
+							Shortcut editor
+						</p>
+					</a>
+					<p class="Header_PageNavi_Textbox_List_Item">
+						Settings
+					</p>
+				</div>
+			</div>
+			<div class="Header_PageNavi_Textbox" id="button_PageNavi_textbox">
+				<div class="Header_PageNavi_Textbox_Title">
+					Launcher Navigation
+				</div>
+				<div class="Header_PageNavi_Textbox_List" id="pageElement_PageNaviList">
+					
+				</div>
+			</div>
+			<div class="Header_Right_Textbox"  id="button_Wifi_textbox">
+				<div class="Header_Right_Textbox_Title" id="textboxElement_Wifi">
+					No Connection
+				</div>				
+				<p class="Header_Right_Textbox_Text" id="pageElement_Connection">
+					Since you're not connected to the internet, links will not open properly. Connect to a Wi-Fi network and refresh the page.
+				</p>
+				<a href="https://fast.com/" target="_blank">
+					<p class="Header_Right_Textbox_Text">
+						<u>Speedtest</u>
+					</p>
+				</a>
+			</div>
+			<div class="Header_Right_Textbox" id="button_Update_textbox">
+				
+				<div class="Header_Right_Textbox_Title">
+					Update is available
+				</div>				
+				<p class="Header_Right_Textbox_Text">
+					A launcher update is available for you to download.
+				</p>
+				<a href="SPT_Settings.html#LauncherUpdate">
+					<p class="Header_Right_Textbox_Text">
+						<u>Check for updates</u>
+					</p>
+				</a>
+			</div>
+			
+			<div class="Sidebar_CategoryNavigation" id="pageElement_Sidebar_CategoryNavigation">
+				<p class="Sidebar_CategoryNavigation_Title">
+					Search elements
+				</p>
+				<input class="Input_Text" placeholder="Search an element" id="pageElement_SearchQuery"></input>
+				<div>
+					<p class="Input_Dropdown_SelectedItem" id="dropdownButton_SeaTyp" onclick="trigger_toggleDropdown(this.id)">
+						Choose a search engine
+					</p>
+					<div class="Input_Dropdown" id="menu_dropdownButton_SeaTyp">
+						<p class="Input_Dropdown_Item" id="dropdownItem_SeaTypEcosia" onclick="trigger_dropdownItemSelected(this.id)">
+							Ecosia
+						</p>
+						<p class="Input_Dropdown_Item" id="dropdownItem_SeaTypGoogle" onclick="trigger_dropdownItemSelected(this.id)">
+							Google
+						</p>
+						<p class="Input_Dropdown_Item" id="dropdownItem_SeaTypBing" onclick="trigger_dropdownItemSelected(this.id)">
+							Bing
+						</p>
+						<p class="Input_Dropdown_Item" id="dropdownItem_SeaTypDuckDuckGo" onclick="trigger_dropdownItemSelected(this.id)">
+							DuckDuckGo
+						</p>
+						<p class="Input_Dropdown_Item" id="dropdownItem_SeaTypYahoo!" onclick="trigger_dropdownItemSelected(this.id)">
+							Yahoo!
+						</p>
+					</div>
+				</div>
+			</div>
+			
+			<!--<div class="Sidebar" id="pageElement_Sidebar">
+				<div class="Header_QuickSearchBar">
+				<input class="Header_QuickSearchBar_Input" placeholder="Search your element here" id="pageElement_SearchQuery"></input>
+				<img src="Assets/Icons/icon_search.png" class="Header_QuickSearchBar_Search" id="headerMain" onclick="search_Query(this.id)" onsubmit="search_Query(this.id)"></img>
+				</div>
+				<div class="Sidebar_ElementInfo_Container">
+				<h1 class="Sidebar_ElementInfo_Symbol" id="Info_Symbol">
+				?
+				</h1>
+				<h3 class="Sidebar_ElementInfo_Name" id="Info_Name">
+				?
+				</h3>
+				<div class="PT_ElementInfo_SubInfo">
+				<p class="PT_ElementInfo_Info">
+				Atomic number: 
+				</p>
+				<h3 class="PT_ElementInfo_InfoValue" id="Info_AtomicNumber">
+				?
+				</h3>
+				<p class="PT_ElementInfo_Info">
+				Atomic weight: 
+				</p>
+				<h3 class="PT_ElementInfo_InfoValue" id="Info_AtomicWeight">
+				?
+				</h3>
+				<p class="PT_ElementInfo_Info">
+				Oxidation state: 
+				</p>
+				<h3 class="PT_ElementInfo_InfoValue" id="Info_OxidState">
+				?
+				</h3>
+				<p class="PT_ElementInfo_Info">
+				Melting point: 
+				</p>
+				<h3 class="PT_ElementInfo_InfoValue" id="Info_MeltPoint">
+				?
+				</h3>
+				<p class="PT_ElementInfo_Info">
+				Boiling point: 
+				</p>
+				<h3 class="PT_ElementInfo_InfoValue" id="Info_BoilPoint">
+				?
+				</h3>
+				<p class="PT_ElementInfo_Info">
+				Density: 
+				</p>
+				<h3 class="PT_ElementInfo_InfoValue" id="Info_Density">
+				?
+				</h3>
+				<p class="PT_ElementInfo_Info">
+				Electronegativity: 
+				</p>
+				<h3 class="PT_ElementInfo_InfoValue" id="Info_Electronegativity">
+				?
+				</h3>
+				</div>
+				<div class="Sidebar_Item" id="pageElement_LearnMore">
+				<img src="Icons/icon_QuickLookup.png" class="Sidebar_Links_Icon"></img>
+				<h1 class="Sidebar_Links_Text" onclick="GoogleElement()">
+				Learn more
+				</h1>
+				</div>
+				</div>
+			</div>-->
+			
+			
+			
+			
+			<div class="MainContent" id="pageElement_MainContent">
+				
+				<a href="#pageElement_Top" id="pageElement_BackToTop"> <img src="Assets/Icons/icon_upArrow.png" class="BackToTop"></img> </a>
+				<span class="anchor" id="pageElement_Top"></span>
+				
+				<div class="PT_Table_Container" id="pageElement_PeriodicTableContainer">
+					<div class="PT_Table_Item"><!-- 1H -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_1"> H </h1>
+						<p class="Elem_Name" id="Elem_ElemName_1"> Hydrogen </p>
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_1"> 1 </h1>
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_1"> 1.0082 </p>
+						<p class="Elem_OxidationState" id="Elem_OxidState_1"> +1, -1 </p>
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_1"> -259.14 </p>
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_1"> -252.87 </p>
+						<p class="Elem_Density" id="Elem_Density_1"> 0.089 </p>
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_1"> 2.1 </p>
+					</div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_2"> He </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_2"> Helium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_2"> 2 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_2"> 4.0026 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_2"> 0 </p> <!-- Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_2"> -272.2 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_2"> -268.9 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_2"> 0.124 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_2"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_3"> Li </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_3"> Lithium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_3"> 3 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_3"> 6.997</p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_3"> +1 </p> <!-- Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_3"> 180.5 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_3"> 1342 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_3"> 0.534 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_3"> 1.0 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_4"> Be </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_4"> Beryllium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_4"> 4 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_4"> 9.0122 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_4"> +2 </p> <!-- Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_4"> 1278 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_4"> 2970 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_4"> 1.85 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_4"> 1.5 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_5"> B </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_5"> Boron </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_5"> 5 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_5"> 10.821; 10.806 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_5"> +3 </p> <!-- Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_5"> 2300 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_5"> 2550 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_5"> 2.35 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_5"> 2.0 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_6"> C </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_6"> Carbon </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_6"> 6 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_6"> 12.009; 12.012 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_6"> +2, +4 </p> <!-- Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_6"> 3550 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_6"> 4827 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_6"> 3.52 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_6"> 2.5 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_7"> N </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_7"> Nitrogen </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_7"> 7 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_7"> 14.006; 14.008 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_7"> ±1, ±2, ±3, ±4, ±5 </p> <!-- Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_7"> -209.9 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_7"> -195.8 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_7"> 1.25 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_7"> 3 0 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_8"> O </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_8"> Oxygen </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_8"> 8 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_8"> 15.999; 16.000 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_8"> -2 </p> <!-- Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_8"> -218.4 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_8"> -182.9 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_8"> 1.429 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_8"> 3.5 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_9"> F </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_9"> Fluorine </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_9"> 9 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_9"> 18.998 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_9"> -1 </p> <!-- Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_9"> -219.62</p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_9"> -188.14 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_9"> 1.696 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_9"> 4.0 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_10"> Ne </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_10"> Neon </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_10"> 10 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_10"> 20.180 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_10"> 0 </p> <!-- Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_10"> -248.7 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_10"> -246.0 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_10"> 1.204 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_10"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_11"> Na </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_11"> Sodium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_11"> 11 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_11"> 22.990 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_11"> +1 </p> <!-- Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_11"> 97.81 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_11"> 882.9 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_11"> 0.972 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_11"> 0.9 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_12"> Mg </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_12"> Magnesium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_12"> 12 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_12"> 24.304; 24.307 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_12"> +1 </p> <!-- Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_12"> 649 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_12"> 1090 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_12"> 1.74 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_12"> 1.2 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_13"> Al </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_13"> Aluminum </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_13"> 13 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_13"> 69.723 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_13"> +3 </p> <!-- Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_13"> 660 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_13"> 2467 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_13"> 2.70 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_3"> 1.5</p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_14"> Si </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_14"> Silicon </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_14"> 14 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_14"> 28.084; 28.086 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_14"> 2, ±4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_14"> 1410 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_14"> 2355 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_14"> 2.24 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_14"> 1.8</p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_15"> P </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_15"> Phosphorus </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_15"> 15 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_15"> 30.974 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_15"> ±3, 5 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_15"> 44.1 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_15"> 280 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_15"> 1.83 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_15"> 2.1</p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_16"> S </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_16"> Sulfur </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_16"> 16 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_16"> 32.059; 32.076 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_16"> -2, ±4, 6 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_16"> 112.8 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_16"> 444.6 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_16"> 2.07 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_16"> 2.5</p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_17"> Cl </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_17"> Chlorine </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_17"> 17 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_17"> 35.446; 35.457 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_17"> ±1, ±5, 7 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_17"> -100.9 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_17"> -34.6</p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_17"> 3.214 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_17"> 3.0</p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_18"> Ar </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_18"> Argon </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_18"> 18 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_18"> 39.948</p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_18"> 0 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_18"> -189.2 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_18"> -185.7</p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_18"> 1.65 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_18"> -</p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_19"> K </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_19"> Potassium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_19"> 19 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_19"> 39.098 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_19"> +1 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_19"> 63.25 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_19"> 759.9 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_19"> 0.87 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_19"> 0.8</p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_20"> Ca </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_20"> Calcium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_20"> 20 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_20"> 40.078(4) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_20"> +2 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_20"> 839 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_20"> 1484 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_20"> 1.55 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_20"> 1.0 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_21"> Sc </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_21"> Scandium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_21"> 21 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_21"> 44.956 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_21"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_21"> 1539 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_21"> 2832 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_21"> 2.98 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_21"> 1.3 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_22"> Ti </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_22"> Titanium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_22"> 22 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_22"> 47.867 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_22"> +2, 3, 4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_22"> 1660 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_22"> 3287 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_22"> 4.51 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_22"> 1.5 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_23"> V </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_23"> Vanadium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_23"> 23 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_23"> 50.942 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_23"> +2, 3, 4, 5 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_23"> 1890 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_23"> 3380 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_23"> 6.10 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_23"> 1.6 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_24"> Cr </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_24"> Chromium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_24"> 24 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_24"> 51.996 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_24"> +2, 3, 6 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_24"> 1857 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_24"> 2672 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_24"> 7.14 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_24"> 1.6 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_25"> Mn </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_25"> Manganese </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_25"> 25 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_25"> 54.938 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_25"> +2, 3, 4, 7 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_25"> 1244 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_25"> 1962 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_25"> 7.3 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_25"> 1.5 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_26"> Fe </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_26"> Iron </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_26"> 26 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_26"> 55.845(2) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_26"> +2, 3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_26"> 1535 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_26"> 2750 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_26"> 7.87 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_26"> 1.8 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_27"> Co </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_27"> Cobalt </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_27"> 27 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_27"> 58.933 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_27"> +2, 3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_27"> 1495 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_27"> 2870 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_27"> 8.83 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_27"> 1.8 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_28"> Ni </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_28"> Nickel </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_28"> 28 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_28"> 58.693 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_28"> +2, 3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_28"> 1453 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_28"> 2732 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_28"> 8.8 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_28"> 1.8 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_29"> Cu </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_29"> Copper </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_29"> 29 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_29"> 63.546(2) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_29"> +1, 2 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_29"> 1083 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_29"> 2567 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_29"> 8.94 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_29"> 1.9 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_30"> Zn </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_30"> Zinc </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_30"> 30 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_30"> 65.38(2) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_30"> +2 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_30"> 419.6 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_30"> 907 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_30"> 7.1 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_30"> 1.6 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_31"> Ga </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_31"> Gallium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_31"> 31 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_31"> 69.723 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_31"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_31"> 29.78 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_31"> 2403 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_31"> 5.9 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_31"> 1.6 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_32"> Ge </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_32"> Germanium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_32"> 32 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_32"> 72.630(8) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_32"> +2, 4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_32"> 937.4 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_32"> 2830 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_32"> 5.36 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_32"> 1.8 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_33"> As </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_33"> Arsenic </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_33"> 33 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_33"> 74.922 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_33"> ±3, 5 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_33"> 817 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_33"> 613 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_33"> 5.72 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_33"> 2.0 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_34"> Se </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_34"> Selenium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_34"> 34 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_34"> 78.971(8) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_34"> -2, +4, 6 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_34"> 217 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_34"> 685 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_34"> 4.82 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_34"> 2.4 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_35"> Br </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_35"> Bromine </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_35"> 35 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_35"> [79.901; 79.907] </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_35"> ±1, +5 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_35"> -7.2 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_35"> 58.8 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_35"> 3.12 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_35"> 2.8 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_36"> Kr </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_36"> Krypton </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_36"> 36 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_36"> 83.798(2) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_36"> 0 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_36"> -156.6 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_36"> -152.3 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_36"> 3.4 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_36"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_37"> Rb </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_37"> Rubidium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_37"> 37 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_37"> 85.468 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_37"> +1 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_37"> 38.9 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_37"> 686 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_37"> 1.53 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_37"> 0.8 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_38"> Sr </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_38"> Strontium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_38"> 38 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_38"> 87.62 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_38"> +2 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_38"> 769 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_38"> 1384 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_38"> 2.6 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_38"> 1.0 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_39"> Y </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_39"> Yttium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_39"> 39 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_39"> 88.906 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_39"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_39"> 1523 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_39"> 3337 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_39"> 4.457 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_39"> 1.3 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_40"> Zr </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_40"> Zirconium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_40"> 40 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_40"> 91.224(2) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_40"> +4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_40"> 1852 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_40"> 4377 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_40"> 6.44 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_40"> 1.4</p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_41"> Nb </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_41"> Niobium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_41"> 41 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_41"> 92.906 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_41"> +3, 5 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_41"> 2468 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_41"> 4742 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_41"> 8.66 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_41"> 1.6</p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_42"> Mo </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_42"> Molybdenum </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_42"> 42 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_42"> 95.95 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_42"> +3, 5, 6 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_42"> 2617 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_42"> 4612 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_42"> 9.01 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_42"> 1.8 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_43"> Tc </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_43"> Technetium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_43"> 43 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_43"> (98) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_43"> +4, 6, 7 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_43"> 2172 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_43"> 4877 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_43"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_43"> 1.9 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_44"> Ru </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_44"> Ruthenium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_44"> 44 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_44"> 101.07(2) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_44"> +3, 4, 6, 8 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_44"> 2310 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_44"> 3900 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_44"> 12.1 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_44"> 2.2 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_45"> Rh </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_45"> Rhodium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_45"> 45 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_45"> 102.91 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_45"> +3, 4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_45"> 1966 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_45"> 3727 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_45"> 12.44 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_45"> 2.2 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_46"> Pd </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_46"> Palladium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_46"> 46 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_46"> 106.42 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_46"> +2, 4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_46"> 1554 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_46"> 3140 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_46"> 12.16 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_46"> 2.2 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_47"> Ag </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_47"> Silver </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_47"> 47 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_47"> 107.87 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_47"> +1 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_47"> 961.9 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_47"> 2212 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_47"> 10.49 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_47"> 1.9 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_48"> Cd </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_48"> Cadmium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_48"> 48 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_48"> 112.41 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_48"> +2 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_48"> 321 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_48"> 765 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_48"> 8.65 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_48"> 1.7 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_49"> In </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_49"> Indium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_49"> 49 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_49"> 114.82 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_49"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_49"> 156.6 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_49"> 2080 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_49"> 7.31 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_49"> 1.7 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_50"> Sn </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_50"> Tin </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_50"> 50 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_50"> 118.71 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_50"> +2, 4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_50"> 232 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_50"> 2270 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_50"> 7.29 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_50"> 1.8 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_51"> Sb </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_51"> Antimony </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_51"> 51 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_51"> 121.76 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_51"> ±2, 5 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_51"> 630.7 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_51"> 1750 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_51"> 6.62 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_51"> 1.9 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_52"> Te </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_52"> Tellurium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_52"> 52 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_52"> 127.60(3) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_52"> +2, +4, 6 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_52"> 449.5 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_52"> 989.8 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_52"> 6.24 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_52"> 2.1 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_53"> I </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_53"> Iodine </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_53"> 53 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_53"> 126.90 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_53"> ±1, +5, 7 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_53"> 113.50 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_53"> 184.35 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_53"> 4.94 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_53"> 2.5 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_54"> Xe </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_54"> Xenon </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_54"> 54 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_54"> 131.29 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_54"> 0 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_54"> -112 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_54"> -107 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_54"> 3.05 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_54"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_55"> Cs </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_55"> Cesium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_55"> 55 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_55"> 182.91 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_55"> +1 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_55"> 28.40 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_55"> 669.3 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_55"> 1.87 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_55"> 0.7 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_56"> Ba </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_56"> Barium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_56"> 56 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_56"> 137.33 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_56"> +2 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_56"> 725 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_56"> 1640 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_56"> 3.5 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_56"> 0.9 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					
+					<!-- This part is the jump from element 56 to element 72 due to how the Periodic Table works. Element 57 to 71 occurs at the bottom part of the table (and this document as well. -->
+					
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_72"> Hf </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_72"> Hafnium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_72"> 72 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_72"> 178.49(2) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_72"> +4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_72"> 2227 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_72"> 4602 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_72"> 13.1 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_72"> 1.3 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_73"> Ta </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_73"> Tantalum </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_73"> 73 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_73"> 130.95 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_73"> +5 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_73"> 2996 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_73"> 5425 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_73"> 16.63 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_73"> 1.5 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_74"> W </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_74"> Tungsten </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_74"> 74 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_74"> 183.84 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_74"> +6 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_74"> 3410 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_74"> 5660 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_74"> 19.3 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_74"> 1.7 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_75"> Re </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_75"> Rhenium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_75"> 75 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_75"> 186.21 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_75"> -1, 6, 7 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_75"> 3180 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_75"> 5627 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_75"> 21.04 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_75"> 1.9 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_76"> Os </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_76"> Osmium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_76"> 76 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_76"> 190.23(3) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_76"> +3, 4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_76"> 3045 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_76"> 5027 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_76"> 22.5 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_76"> 2.2 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_77"> Ir </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_77"> Iridium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_77"> 77 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_77"> 192.22 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_77"> +3, 4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_77"> 2410 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_77"> 4130 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_77"> 22.42 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_77"> 2.2 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_78"> Pt </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_78"> Platinum </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_78"> 78 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_78"> 195.08 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_78"> +2, 4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_78"> 1772 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_78"> 3827 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_78"> 21.37 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_78"> 2.2 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_79"> Au </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_79"> Gold </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_79"> 79 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_79"> 196.97 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_79"> +1, 3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_79"> 1064 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_79"> 3080 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_79"> 19.32 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_79"> 2.4 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_80"> Hg </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_80"> Mercury </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_80"> 80 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_80"> 200.59 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_80"> +1, 2 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_80"> 38.87 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_80"> 356.6 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_80"> 13.55 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_80"> 1.9 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_81"> Tl </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_81"> Thallium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_81"> 81 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_81"> [204.38; 204.39] </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_81"> +1, 3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_81"> 303.5 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_81"> 1457 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_81"> 11.85 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_81"> 1.8 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_82"> Pb </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_82"> Lead </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_82"> 82 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_82"> 237.2 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_82"> +2, 4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_82"> 327.5 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_82"> 1740 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_82"> 11.4 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_82"> 1.8 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_83"> Bi </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_83"> Bismuth </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_83"> 83 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_83"> 108.98 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_83"> +3, 5 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_83"> 271.3 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_83"> 1560 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_83"> 9.78 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_83"> 1.9 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_84"> Po </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_84"> Polonium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_84"> 84 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_84"> 209 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_84"> +2, 4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_84"> 254 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_84"> 962 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_84"> 9.4 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_84"> 2.0 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_85"> At </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_85"> Astatine </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_85"> 85 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_85"> 210 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_85"> ±1 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_85"> 302 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_85"> 337 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_85"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_85"> 2.2 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_86"> Rn </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_86"> Radon </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_86"> 86 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_86"> 222 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_86"> 0 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_86"> -71 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_86"> -61.8 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_86"> 9.72 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_86"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_87"> Fr </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_87"> Francium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_87"> 87 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_87"> (223) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_87"> +1 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_87"> (27) </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_87"> (677) </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_87"> 2.4 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_87"> 0.7 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_88"> Ra </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_88"> Radium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_88"> 88 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_88"> (226) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_88"> +2 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_88"> 700 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_88"> 1140 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_88"> 5 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_88"> 0.9 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_104"> Rf </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_104"> Rutherfordium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_104"> 104 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_104"> (265) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_104"> +4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_104"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_104"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_104"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_104"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_105"> Db </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_105"> Dubnium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_105"> 105 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_105"> (268) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_105"> - </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_105"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_105"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_105"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_105"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_106"> Sg </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_106"> Seaborgium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_106"> 106 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_106"> (271) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_106"> - </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_106"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_106"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_106"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_106"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_107"> Bh </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_107"> Bohrium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_107"> 107 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_107"> (272) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_107"> - </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_107"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_107"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_107"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_107"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_108"> Hs </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_108"> Hassium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_108"> 108 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_108"> (270) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_108"> - </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_108"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_108"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_108"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_108"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_109"> Mt </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_109"> Meitnerium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_109"> 109 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_109"> (276) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_109"> - </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_109"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_109"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_109"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_109"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_110"> Ds </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_110"> Darmstadtium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_110"> 110 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_110"> (281) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_110"> - </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_110"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_110"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_110"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_110"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_111"> Rg </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_111"> Roentgenium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_111"> 111 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_111"> (280) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_111"> - </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_111"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_111"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_111"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_111"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_112"> Cn </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_112"> Copernicium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_112"> 112 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_112"> (285) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_112"> - </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_112"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_112"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_112"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_112"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_113"> Nh </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_113"> Nihonium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_113"> 113 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_113"> (286) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_113"> - </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_113"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_113"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_113"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_113"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_114"> Fl </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_114"> Flerovium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_114"> 114 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_114"> (289) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_114"> - </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_114"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_114"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_114"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_114"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_115"> Mc </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_115"> Moscovium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_115"> 115 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_115"> (289) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_115"> - </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_115"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_115"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_115"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_115"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_116"> Lv </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_116"> Livermorium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_116"> 116 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_116"> (293) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_116"> - </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_116"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_116"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_116"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_116"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_117"> Ts </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_117"> Tennessine </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_117"> 117 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_117"> (294) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_117"> - </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_117"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_117"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_117"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_117"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_118"> Og </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_118"> Oganesson </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_118"> 118 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_118"> (294) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_118"> - </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_118"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_118"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_118"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_118"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_57"> La </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_57"> Lanthanum </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_57"> 57 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_57"> 138.91 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_57"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_57"> 920 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_57"> 3454 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_57"> 6.16 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_57"> 1.1 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_58"> Ce </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_58"> Cerium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_58"> 58 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_58"> 140.12 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_58"> +3, 4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_58"> 798 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_58"> 3257 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_58"> 6.77 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_58"> 1.1 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_59"> Pr </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_59"> Praseodymium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_59"> 59 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_59"> 140.91 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_59"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_59"> 931 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_59"> 3212 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_59"> 6.77 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_59"> 1.1 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_60"> Nd </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_60"> Neodymium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_60"> 60 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_60"> 144.24 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_60"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_60"> 1010 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_60"> 3127 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_60"> 7.00 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_60"> 1.2 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_61"> Pm </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_61"> Promethium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_61"> 61 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_61"> (145) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_61"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_61"> 1080 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_61"> 2460 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_61"> 7.22 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_61"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_62"> Sm </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_62"> Samarium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_62"> 62 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_62"> 150.36(2) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_62"> +2, 3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_62"> 1072 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_62"> 1778 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_62"> 7.54 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_62"> 1.2 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_63"> Eu </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_63"> Europium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_63"> 63 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_63"> 151.96 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_63"> +2, 3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_63"> 822 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_63"> 1597 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_63"> 5.24 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_63"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_64"> Gd </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_64"> Gadolinium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_64"> 64 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_64"> 157.25(3) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_64"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_64"> 1311 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_64"> 3233 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_64"> 7.89 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_64"> 1.1 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_65"> Tb </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_65"> Terbium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_65"> 65 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_65"> 158.93 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_65"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_65"> 1360 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_65"> 3041 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_65"> 8.25 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_65"> 1.2 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_66"> Dy </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_66"> Dysprosium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_66"> 66 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_66"> 162.50 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_66"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_66"> 1409 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_66"> 2335 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_66"> 8.56 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_66"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_67"> Ho </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_67"> Holmium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_67"> 67 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_67"> 164.93 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_67"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_67"> 1470 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_67"> 2720 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_67"> 8.78 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_67"> 1.2 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_68"> Er </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_68"> Erbium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_68"> 68 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_68"> 167.26 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_68"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_68"> 1522 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_68"> 2510 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_68"> 9.04 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_68"> 1.2 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_69"> Tm </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_69"> Thulium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_69"> 69 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_69"> 168.93 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_69"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_69"> 1545 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_69"> 1727 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_69"> 9.32 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_69"> 1.2 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_70"> Yb </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_70"> Ytterbium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_70"> 70 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_70"> 173.05 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_70"> +2, 3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_70"> 824 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_70"> 1193 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_70"> 6.97 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_70"> 1.1 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_71"> Lu </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_71"> Lutetium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_71"> 71 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_71"> 174.97 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_71"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_71"> 1656 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_71"> 3315 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_71"> 9.84 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_71"> 1.2 </p> <!-- Electronegativity -->
+					</div>
+					
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					<div class="PT_Table_Item PT_Empty_Table_Item"></div>
+					
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_89"> Ac </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_89"> Actinium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_89"> 89 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_89"> (227) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_89"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_89"> 1050 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_89"> 3200 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_89"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_89"> 1.1 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_90"> Th </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_90"> Thorium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_90"> 90 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_90"> 232.04 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_90"> +4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_90"> 1750 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_90"> 4790 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_90"> 11.0 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_90"> 1.3 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_91"> Pa </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_91"> Protactinium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_91"> 91 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_91"> 231.04 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_91"> +4, 5 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_91"> 1600 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_91"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_91"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_91"> 1.5 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_92"> U </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_92"> Uranium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_92"> 92 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_92"> 238.03 </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_92"> +3, 4, 5, 6 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_92"> 1132 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_92"> 3818 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_92"> 19.05 </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_92"> 1.7 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_93"> Np </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_93"> Neptunium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_93"> 93 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_93"> (237) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_93"> +3, 4, 5, 6 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_93"> 640 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_93"> 3902 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_93"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_93"> 1.3 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_94"> Pu </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_94"> Plutonium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_94"> 94 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_94"> (244) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_94"> +3, 4, 5, 6 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_94"> 641 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_94"> 3232 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_94"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_94"> 1.3 </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_95"> Am </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_95"> Americium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_95"> 95 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_95"> (243) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_95"> +3, 4, 5, 6 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_95"> 994 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_95"> 2607 </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_95"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_95"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_96"> Cm </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_96"> Curium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_96"> 96 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_96"> (247) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_96"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_96"> 1340 </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_96"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_96"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_96"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_97"> Bk </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_97"> Berkelium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_97"> 97 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_97"> (247) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_97"> +3, 4 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_97"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_97"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_97"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_97"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_98"> Cf </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_98"> Californium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_98"> 98 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_98"> (251) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_98"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_98"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_98"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_98"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_98"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_99"> Es </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_99"> Einsteinium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_99"> 99 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_99"> (252) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_99"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_99"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_99"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_99"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_99"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_100"> Fm </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_100"> Fermium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_100"> 100 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_100"> (257) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_100"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_100"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_100"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_100"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_100"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_101"> Md </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_101"> Mendelevium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_101"> 101 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_101"> (258) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_101"> +2, 3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_101"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_101"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_101"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_101"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_102"> No </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_102"> Nobelium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_102"> 102 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_102"> (259) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_102"> +2, 3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_102"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_102"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_102"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_102"> - </p> <!-- Electronegativity -->
+					</div>
+					<div class="PT_Table_Item"> <!-- Element box container -->
+						<h1 class="Elem_Symbol" id="Elem_ElemSymbol_103"> Lr </h1> <!-- Symbol -->
+						<p class="Elem_Name" id="Elem_ElemName_103"> Lawrencium </p> <!-- Name -->
+						<h1 class="Elem_AtomicNumber" id="Elem_AtomicNumber_103"> 103 </h1> <!-- Atomic Number -->
+						<p class="Elem_AtomicWeight" id="Elem_AtomicWeight_103"> (262) </p> <!-- Atomic Weight -->
+						<p class="Elem_OxidationState" id="Elem_OxidState_103"> +3 </p> <!-- ± Oxidation state -->
+						<p class="Elem_MeltingPoint" id="Elem_MeltPoint_103"> - </p> <!-- Melting point -->
+						<p class="Elem_BoilingPoint" id="Elem_BoilPoint_103"> - </p> <!-- Boiling point -->
+						<p class="Elem_Density" id="Elem_Density_103"> - </p> <!-- Density -->
+						<p class="Elem_Electronegativity" id="Elem_Electronegativity_103"> - </p> <!-- Electronegativity -->
+					</div>
+				</div>
+				<footer class="Footer">
+					<h1 class="Footer_Text" id="pageElement_Footer_VersionTitle">
+						Doodle Launcher Public Beta
+					</h1>
+					<h1 class="Footer_Text">
+						Content By ElmerF 2022
+					</h1>
+				</footer>
+			</div>
+			
+		</div>
+		
+	</body>
+</html>			
