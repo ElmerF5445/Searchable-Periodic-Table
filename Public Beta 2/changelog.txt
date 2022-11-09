@@ -1,0 +1,21 @@
+Searchable Periodic Table Changelogs
+Created by Elmer F.
+===
+Help improve this project by providing feedback on the Feedback Form provided in the page.
+===
+Public Beta 2 (1.1) [Pending]
+- The page had been redesigned to match Elms' UI 1.4
+- Added a zoom feature that can be activated by pressing Ctrl+Q
+- Added a layout for smaller window sizes
+- Added smoother hover effects on items that doesn't have them
+- Changed the search type to be a dropdown instead of a toggle
+- Changed the position of the search bar and search type to the page header
+- Clicking an element will change the result page to its element
+- Searching for an element will highlight the item on the table
+- Cleaned the folder and removed unnecessary files and code
+
+Public Beta 1 (1.0) March 11, 2022
+- Added the first iteration of the periodic table
+- Added a Feedback Form link in the page
+- Added the functionality to search for elements based on the element name, symbol, and atomic number
+- Added the functionality to be able to open a Google query page when searching an element

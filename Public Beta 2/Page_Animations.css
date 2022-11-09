@@ -1,0 +1,107 @@
+@keyframes spin {
+	0% {transform: rotate(0deg);}
+	100% {transform: rotate(360deg);}
+}
+
+@keyframes openSidebar{
+	from {width: 6%;}
+	to {width: 23.7%;}
+}
+
+
+
+@keyframes compressContent{
+	from {margin-left: 0%;}
+	to {margin-left: 26%;}
+}
+
+
+@keyframes starting{
+	from {opacity: 0%;}
+	to {opacity: 100%;}
+}
+
+@keyframes closeSidebar{
+	from {width: 23.7%;}
+	to {width: 6%;}
+}
+
+@keyframes openSidebar{
+	from {width: 6%;}
+	to {width: 23.7%;}
+}
+
+@keyframes tabOpening{
+	from {opacity: 0%; transform: translateY(-30px);}
+	to {opacity: 100%; transform: translateY(0px);}
+}
+@keyframes tabClosing{
+	from {opacity: 100%; transform: translateY(0px);}
+	to {opacity: 0%; transform: translateY(30px); display: none; }
+}
+
+@keyframes bgdimOpening{
+	from {opacity: 0%;}
+	to {opacity: 100%;}
+}
+
+@keyframes bgdimClosing{
+	from {opacity: 100%;}
+	to {opacity: 0%;}
+}
+
+@keyframes windowOpening{
+	from {opacity: 0%; transform: scale(0.95);}
+	to {opacity: 100%; transform: scale(1);}
+}
+
+@keyframes windowClosing{
+	from {opacity: 100%; transform: scale(1);}
+	to {opacity: 0%; transform: scale(0.95);}
+}
+
+@keyframes notifyOpen{
+	from {opacity: 0%; transform: translateY(-10px);}
+	to {opacity: 100%; transform: translateY(0px);} 
+}
+
+@keyframes notifyClose{
+	from {opacity: 100%; transform: translateY(0px);}
+	to {opacity: 0%; transform: translateY(-10px);}
+}
+
+@keyframes loading{
+	from {opacity: 100%;}
+	to {opacity: 0%;}
+}
+@keyframes sidebarLarge_Open{
+	from {transform: translateX(-15px); opacity: 0%;}
+	to {transform: translateX(0px); opacity: 100%;}
+}
+
+@keyframes sidebarSmall_Open{
+	from {transform: translateX(15px); opacity: 0%;}
+	to {transform: translateX(0px); opacity: 100%;}
+}
+
+@keyframes iconRotate{
+	from {transform: rotate(0deg);}
+	to {transform: rotate(360deg);}
+}
+
+@keyframes iconBounce{
+	0% {transform: translateY(0px);}
+	50% {transform: translateY(-20px);}
+	90% {transform: translateY(10px);}
+	100% {transform: translateY(0px);}
+}
+
+@keyframes opacitateToLeft{
+	from {transform: translateX(100px); opacity: 0%;}
+	to {transform: translateX(0px); opacity: 100%;}
+}
+
+@keyframes opacitateToRight{
+	from {transform: translateX(-100px); opacity: 0%;}
+	to {transform: translateX(0px); opacity: 100%;}
+}
