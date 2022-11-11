@@ -4,7 +4,7 @@
 */
 
 var VersionTitle = "Searchable Periodic Table";
-var VersionNumber = "Public Beta 2";
+var VersionNumber = "Github Test";
 var ContinuityVersionNumber = "1.1"
 var CopyrightTitle = "Content By ElmerF 2022";
 var ELMSUIVersion = "1.4";
